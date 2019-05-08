@@ -80,8 +80,7 @@ describe('Testing the book endpoints:', () => {
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.status).to.equal(404);
-        res.body.should.have.property('message')
-                            .eql(`Cannot find book with the id ${bookId}`);
+        res.body.should.have.property('message').eql(`Cannot find book with the id ${bookId}`);
         done();
       });
   });
@@ -93,8 +92,7 @@ describe('Testing the book endpoints:', () => {
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.status).to.equal(400);
-        res.body.should.have.property('message')
-                            .eql('Please input a valid numeric value');
+        res.body.should.have.property('message').eql('Please input a valid numeric value');
         done();
       });
   });
@@ -135,8 +133,7 @@ describe('Testing the book endpoints:', () => {
       .send(updatedBook)
       .end((err, res) => {
         expect(res.status).to.equal(404);
-        res.body.should.have.property('message')
-                            .eql(`Cannot find book with the id: ${bookId}`);
+        res.body.should.have.property('message').eql(`Cannot find book with the id: ${bookId}`);
         done();
       });
   });
@@ -155,8 +152,7 @@ describe('Testing the book endpoints:', () => {
       .send(updatedBook)
       .end((err, res) => {
         expect(res.status).to.equal(400);
-        res.body.should.have.property('message')
-                            .eql('Please input a valid numeric value');
+        res.body.should.have.property('message').eql('Please input a valid numeric value');
         done();
       });
   });
@@ -181,8 +177,7 @@ describe('Testing the book endpoints:', () => {
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.status).to.equal(404);
-        res.body.should.have.property('message')
-                            .eql(`Book with the id ${bookId} cannot be found`);
+        res.body.should.have.property('message').eql(`Book with the id ${bookId} cannot be found`);
         done();
       });
   });
